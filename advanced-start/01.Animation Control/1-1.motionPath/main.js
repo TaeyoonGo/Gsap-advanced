@@ -9,7 +9,10 @@ const tiger = $('#tiger')
 const BUTTON = $('#button')
 const time = $('#time')
 const progress = $('#progressSlider')
-
+const home = $('#home')
+const mountain = $('#mountain')
+const river = $('#river')
+const company = $('#company')
 
 
 const animation = gsap.to(tiger, {
@@ -23,6 +26,7 @@ const animation = gsap.to(tiger, {
 })
 
 function update(){
+    progress.value = animation.progress();
     time.textContent = animation.time().toFixed(2);
 }
 
@@ -36,9 +40,60 @@ BUTTON.addEventListener('click', () => {
 })
 
 
-progress.addEventListener('input',() => {
+progress.addEventListener('input',(e) => {
 
+    let target = e.currentTarget
+    BUTTON.textContent = 'play'
+    animation.progress(target.value).pause();
 })
+
+
+
+home.addEventListener('click',function(){
+    animation.pause();
+    gsap.to(animation,{
+        progress: 0,
+        duration:3
+    })
+})
+
+mountain.addEventListener('click',function(){
+    animation.pause();
+    gsap.to(animation,{
+        progress: 0.238,
+        duration:3
+    })
+})
+
+river.addEventListener('click',function(){
+    animation.pause();
+    gsap.to(animation,{
+        progress: 0.47,
+        duration:3
+    })
+})
+
+
+company.addEventListener('click',function(){
+    animation.pause();
+    gsap.to(animation,{
+        progress: 1,
+        duration:3
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //문 vs 식
 //값을 반환하지 않음 / 값을 반환
@@ -49,3 +104,5 @@ progress.addEventListener('input',() => {
 
 
 // const result  = condition ? value1 : value2
+
+
