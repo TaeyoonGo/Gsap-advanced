@@ -53,6 +53,8 @@ progress.addEventListener('input', (e) => {
 
 
 
+
+
 svg.addEventListener('click', (e) => {
     const target = e.target.closest('g');
     const id = target.getAttribute('id');
@@ -84,6 +86,42 @@ svg.addEventListener('click', (e) => {
     }
 
 
+
+
+
+
+// home.addEventListener('click',function(){
+//     animation.pause();
+//     gsap.to(animation,{
+//         progress: 0,
+//         duration:3
+//     })
+// })
+//
+// mountain.addEventListener('click',function(){
+//     animation.pause();
+//     gsap.to(animation,{
+//         progress: 0.238,
+//         duration:3
+//     })
+// })
+//
+// river.addEventListener('click',function(){
+//     animation.pause();
+//     gsap.to(animation,{
+//         progress: 0.47,
+//         duration:3
+//     })
+// })
+//
+//
+// company.addEventListener('click',function(){
+//     animation.pause();
+//     gsap.to(animation,{
+//         progress: 1,
+//         duration:3
+//     })
+// })
 
     gsap.to(animation, {progress: progress, duration: 1})
     setButtonState();
