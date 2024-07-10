@@ -4,12 +4,23 @@
 
 let tl = gsap.timeline()
 .to('.orange',{duration:2,x:300})
+    .addPause('>',wait,[2])
 .to('.blue',{duration:2,x:300})
 
 
 
 
 
+// gsap.delayedCall(2,()=>{
+//     console.log('hello')
+// })
+
+
+function wait(sec){
+    gsap.delayedCall(sec,()=>{
+        tl.play();
+    })
+}
 
 
 
